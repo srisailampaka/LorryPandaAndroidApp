@@ -1,19 +1,30 @@
 package com.lorrypanda.fragments;
 
+import java.util.ArrayList;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,15 +33,23 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.loopj.android.http.RequestParams;
 import com.lorrypanda.activitys.HomeActivity;
+import com.lorrypanda.activitys.LoginActivity;
 import com.lorrypanda.activitys.R;
+import com.lorrypanda.connections.AppUrls;
+import com.lorrypanda.connections.ResultListener;
+import com.lorrypanda.connections.SingletonClass;
+import com.lorrypanda.connections.UrlConnection;
 import com.lorrypanda.utils.GPSTracker;
 
-public class PickupFragment extends Fragment{
+public class PickupFragment extends Fragment implements ResultListener<String>{
 
 	private GoogleMap googlemap;
    private GPSTracker gps;
 	private  double latitude,longitude;
+	private String response;
+	private ProgressDialog progressDialog;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -54,10 +73,16 @@ public class PickupFragment extends Fragment{
              
             
          }
+		
+			
+				
+				
+				
+				
+				
+				
 		 
-		 
-		 
-		 
+
 		 
 		
 
@@ -127,6 +152,7 @@ public void showMap(){
 }
 
 public void enterSearchText(){
+	 String[] language ={"C","C++","Java",".NET","iPhone","Android","ASP.NET","PHP"};  
 	
 	LayoutInflater li = LayoutInflater.from(getActivity());
 	View promptsView = li.inflate(R.layout.prompt, null);
@@ -137,9 +163,56 @@ public void enterSearchText(){
 	
 	alertDialogBuilder.setView(promptsView);
 
-	final EditText userInput = (EditText) promptsView
+	final AutoCompleteTextView userInput = (AutoCompleteTextView) promptsView
 			.findViewById(R.id.editTextDialogUserInput);
+	
+	  userInput.setThreshold(1);
+	  userInput.addTextChangedListener(new TextWatcher() {
+		
+		@Override
+		public void onTextChanged(CharSequence s, int start, int before, int count) {
+			// TODO Auto-generated method stub
+			
+			
+			
+				
 
+			String value="hyde";
+	 JSONObject params=new JSONObject();
+				
+				progressDialog = new ProgressDialog(getActivity(), ProgressDialog.THEME_HOLO_LIGHT);
+				progressDialog.setMessage("Please wait for a moment...");
+				progressDialog.setCancelable(false);
+				progressDialog.show();
+				
+				 String url=AppUrls.GOOGLEADDRESSES_URL+"?input="+value+"&types=geocode&sensor=false&key="+AppUrls.API_KEY;
+				 
+					new UrlConnection(PickupFragment.this, 2, url, getActivity(), params).execute();
+				
+				
+			
+			
+		}
+		
+		@Override
+		public void beforeTextChanged(CharSequence s, int start, int count,
+				int after) {
+			// TODO Auto-generated method stub
+			
+			
+			
+		}
+		
+		@Override
+		public void afterTextChanged(Editable s) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
+	
+	  ArrayAdapter<String> adapter = new ArrayAdapter<String>  
+      (getActivity(),android.R.layout.select_dialog_item,language); 
+	  userInput.setAdapter(adapter);
 	
 	alertDialogBuilder.setCancelable(false);
 	alertDialogBuilder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
@@ -166,6 +239,31 @@ public void enterSearchText(){
 	AlertDialog alertDialog = alertDialogBuilder.create();
 	alertDialog.show();
 	
+}
+
+@Override
+public void onSuccess(String result) {
+	// TODO Auto-generated method stub
+	progressDialog.dismiss();
+	 response=result;
+	System.out.println("------response-------------"+result);
+	
+	getActivity().runOnUiThread(new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			
+			Toast.makeText(getActivity(), ""+response, 5000).show();
+			
+		}
+	});
+}
+
+@Override
+public void onFailure(Throwable e) {
+	// TODO Auto-generated method stub
+	progressDialog.dismiss();
 }
 
 

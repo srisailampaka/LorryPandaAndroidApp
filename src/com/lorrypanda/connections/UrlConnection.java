@@ -117,7 +117,7 @@ private ResultListener<String> callback;
         HttpResponse httpResponse = null;
         DefaultHttpClient httpClient;
         Object result = null;
-        Log.v("request Object", request2.toString());
+       // Log.v("request Object", request2.toString());
 
         try {
             // Handle RESTful services

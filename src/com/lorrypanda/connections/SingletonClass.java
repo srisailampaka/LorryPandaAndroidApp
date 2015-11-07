@@ -153,7 +153,27 @@ public class SingletonClass {
 					}
 				});
 	}
-	
+	public void getgoogleaddress(Context context, RequestParams params)
+	{
+		LoopJHttpClient.get(AppUrls.GOOGLEADDRESSES_URL, params, new JsonHttpResponseHandler(){
+			@Override
+			public void onSuccess(int statusCode, Header[] headers,
+					JSONArray response) {
+				if(statusCode == 200)
+				{
+					resultListener.onSuccess(response.toString());
+					AppUtils.debugOut(response.toString());
+				}
+			}
+			@Override
+			public void onFailure(int statusCode, Header[] headers,
+					Throwable throwable, JSONArray errorResponse) {
+				// TODO Auto-generated method stub
+				resultListener.onFailure(throwable);
+			}
+		});
+
+	}
 	
 	
 }

@@ -322,6 +322,7 @@ public class LoginActivity extends Activity implements OnClickListener, ResultLi
 	}
    
    private void signInWithGplus() {
+	   
 	   if (!mGoogleApiClient.isConnecting()) {
 			mSignInClicked = true;
 			resolveSignInError();
