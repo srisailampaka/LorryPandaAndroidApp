@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+  
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        
+        >
+    
+   <LinearLayout 
+       
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        
+       >
+    
+       
+       <include 
+           
+           android:id="@+id/header_lauout"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="top"
+           layout="@layout/header"
+           
+           />
+       
+       
+<LinearLayout 
+    android:id="@+id/layout_buttons_login"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+   
+    android:layout_marginTop="30dp"
+    android:gravity="center"
+   >
+
+     <com.google.android.gms.common.SignInButton
+        android:id="@+id/login_with_google"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#FF5722"
+        android:text="Sign In With Google+"
+        android:textColor="@color/button_text"
+        android:textSize="10sp" />
+ 
+    <Button 
+       
+       android:id="@+id/login_with_facebook"
+       android:layout_width="wrap_content"
+       android:layout_height="35dp"
+       android:text="Sign In With Facebook"
+       android:paddingLeft="20dp"
+       android:background="#0000FF"
+     android:paddingRight="20dp"
+       
+        android:textColor="@color/button_text"
+     
+      android:layout_marginLeft="20dp"
+       android:textSize="10sp"
+       /> 
+    
+</LinearLayout>
+    
+
+<TextView 
+    
+    android:id="@+id/text_name"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Name"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+
+<EditText 
+    
+    android:id="@+id/name_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="John"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    
+    android:inputType="textWebEmailAddress"
+    android:singleLine="true"
+    android:textColor="#000000"
+   
+    
+    />
+
+
+
+<TextView 
+    
+    android:id="@+id/text_email"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/email_text"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+
+<EditText 
+    
+    android:id="@+id/email_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="deliver@gmail.com"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    
+    android:inputType="textWebEmailAddress"
+    android:singleLine="true"
+    android:textColor="#000000"
+   
+    
+    />
+<TextView 
+    
+    android:id="@+id/text_phone_number"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Phone Number"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+<EditText 
+    
+    android:id="@+id/phone_number_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="9999999999"
+     android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:inputType="number"
+    android:singleLine="true"
+    android:textColor="#000000"
+    
+    
+    />
+<TextView 
+    
+    android:id="@+id/text_password"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/password_text"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+<EditText 
+    
+    android:id="@+id/password_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="**************"
+     android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:inputType="textPassword"
+    android:singleLine="true"
+    android:textColor="#000000"
+    
+    
+    />
+<Button 
+    
+    android:id="@+id/registration_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="REGISTER"
+    android:textColor="@color/button_text"
+    android:background="@drawable/rectangle"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_gravity="center"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    />
+
+  
+
+
+
+
+   </LinearLayout>  
+ </ScrollView>   
+</LinearLayout>

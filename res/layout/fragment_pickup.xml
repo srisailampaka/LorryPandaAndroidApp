@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical" >
+   
+   
+
+    <fragment
+android:id="@+id/mapfragment"
+android:name="com.google.android.gms.maps.MapFragment"
+android:layout_width="match_parent"
+android:layout_weight="7"
+android:layout_height="0dp"/>
+
+    
+    <LinearLayout 
+        android:id="@+id/chooseTruckLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+         android:layout_weight="2"
+         android:gravity="center"
+        android:orientation="horizontal"
+        
+        >
+        
+        <LinearLayout 
+            
+            android:id="@+id/tataace100"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            >
+            
+            
+            <ImageView 
+                
+                android:id="@+id/tataace_100"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:src="@drawable/ic_launcher"
+                />
+            <TextView 
+                
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TATA ACE 100"
+                android:textSize="10sp"
+                />
+        </LinearLayout>
+        <LinearLayout 
+            
+            android:id="@+id/tataace700"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+            
+            
+            <ImageView 
+                
+                android:id="@+id/tataace_700"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:src="@drawable/ic_launcher"
+                />
+            <TextView 
+                
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TATA ACE 700"
+                 android:textSize="10sp"
+                />
+        </LinearLayout>
+        <LinearLayout 
+            
+            android:id="@+id/swarazmasza_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+            
+            
+            <ImageView 
+                
+                android:id="@+id/swarazmasza"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:src="@drawable/ic_launcher"
+                />
+            <TextView 
+                
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TATA ACE 100"
+                 android:textSize="10sp"
+                />
+        </LinearLayout>
+        <LinearLayout 
+            
+            android:id="@+id/maximo_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+            
+            
+            <ImageView 
+                
+                android:id="@+id/maximo"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:src="@drawable/ic_launcher"
+                />
+            <TextView 
+                
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TATA ACE 100"
+                 android:textSize="10sp"
+                />
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+       <LinearLayout 
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        
+        >
+           
+           <Button 
+               
+               android:id="@+id/tripNow"
+               android:layout_height="wrap_content"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:text="Take Trip Now"
+               />
+           
+            <Button 
+               
+               android:id="@+id/triplater"
+               android:layout_height="wrap_content"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:text="Take Trip Later"
+               />
+           
+           
+       </LinearLayout>
+    
+    
+    
+    
+    
+    
+</LinearLayout>
+    
+    
+    
+    
+    
+    
+    
+

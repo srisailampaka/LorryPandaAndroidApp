@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:layout_marginTop="15dp"
+    >
+    
+<TextView 
+    
+    android:id="@+id/text_name"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Name"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+
+<EditText 
+    
+    android:id="@+id/name_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="John"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    
+    android:inputType="textWebEmailAddress"
+    android:singleLine="true"
+    android:textColor="#000000"
+   
+    
+    />
+
+
+
+<TextView 
+    
+    android:id="@+id/text_email"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/email_text"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+
+<EditText 
+    
+    android:id="@+id/email_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="deliver@gmail.com"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    
+    android:inputType="textWebEmailAddress"
+    android:singleLine="true"
+    android:textColor="#000000"
+   
+    
+    />
+<TextView 
+    
+    android:id="@+id/text_phone_number"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Phone Number"
+    android:textColor="#03A9F4"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="20sp"
+    />
+<EditText 
+    
+    android:id="@+id/phone_number_edit"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="9999999999"
+     android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:inputType="number"
+    android:singleLine="true"
+    android:textColor="#000000"
+    
+    
+    />
+
+<Button 
+    
+    android:id="@+id/update_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Update"
+    android:textColor="@color/button_text"
+    android:background="@drawable/rectangle"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_gravity="center"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    />
+
+</LinearLayout>
